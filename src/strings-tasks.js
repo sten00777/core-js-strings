@@ -379,10 +379,13 @@ function findLongestWord(sentence) {
  */
 function reverseWords(str) {
   if (!str) return '';
-  return str
-    .split(' ')
-    .forEach((el) => el.split('').reverse().join(''))
-    .join(' ');
+  if (str.includes(' ')) {
+    return str
+      .split(' ')
+      .forEach((el) => el.split('').reverse().join(''))
+      .join(' ');
+  }
+  return str.split('').reverse().join('');
 }
 
 /**
